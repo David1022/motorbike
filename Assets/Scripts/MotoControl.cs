@@ -14,27 +14,27 @@ public class MotoControl : MonoBehaviour {
         rigidbody = GetComponent<Rigidbody2D>();
 	}
 
-    private void MueveDerecha() {
+    public void MueveDerecha() {
         rigidbody.velocity = new Vector2(transform.right.x * velocidadLineal, transform.right.y * velocidadLineal);
     }
 
-    private void MueveIzquierda()
+    public void MueveIzquierda()
     {
         rigidbody.velocity = new Vector2(-(transform.right.x * velocidadLineal), transform.right.y * velocidadLineal);
     }
 
-    private void RotaDerecha()
+    public void RotaDerecha()
     {
         //rigidbody.AddForce(Vector2.right, ForceMode2D.Force);
         rigidbody.MoveRotation(rigidbody.rotation - velocidadLineal * Time.deltaTime);
     }
 
-    private void RotaIzquierda()
+    public void RotaIzquierda()
     {
         rigidbody.MoveRotation(rigidbody.rotation + velocidadLineal * Time.deltaTime);
     }
 
-    private void Jump() {
+    public void Jump() {
         rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
